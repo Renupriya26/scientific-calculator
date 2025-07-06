@@ -1,0 +1,155 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background & base styles */
+body {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  font-size: 14px;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+/* Calculator wrapper */
+.calculator {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+  width: 340px;
+  max-width: 90vw;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Display */
+#display {
+  width: 100%;
+  height: 70px;
+  font-size: 28px;
+  text-align: right;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* Button grid */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Buttons */
+.btn {
+  padding: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: linear-gradient(to top right, #a18cd1 0%, #fbc2eb 100%);
+  color: #333;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.equal {
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  color: white;
+  grid-row: span 2;
+}
+
+.zero {
+  grid-column: span 2;
+}
+
+/* History panel */
+.history {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 12px;
+  margin-top: 20px;
+  width: 340px;
+  max-width: 90vw;
+  color: black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#historyList {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#historyList li {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+/* Scientific button section */
+#sci-buttons {
+  grid-column: span 4;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  #display {
+    font-size: 22px;
+    height: 60px;
+  }
+
+  .theme-toggle {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .equal {
+    font-size: 14px;
+  }
+}
